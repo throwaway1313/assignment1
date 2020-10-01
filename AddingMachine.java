@@ -2,14 +2,16 @@ package cse360assignment02;
 
 /**
 * A program implementing a machine that allows you to add, 
-* subtract, and get the current value
+* subtract, and get the current value. It also allows you to
+* see a log of all transactions that have occurred.
 *
 * @author  Mikey Richards
-* @version 1.0
+* @version 1.1
 * @since   1.0
 */
 public class AddingMachine {
   private int total;
+  private String transactions = "0";
   
   /**
   * The constructor for an AddingMachine. total is set to zero for clarity,
@@ -22,41 +24,45 @@ public class AddingMachine {
   }
   
   /**
-   * Unimplemented function to return the current value of total. Always returns 0.
+   * Returns the current value of total.
    *
-   * @return 0
+   * @return The current value of total
    * @since  1.0
    */
   public int getTotal () {
-    return 0;
+    return total;
   }
   
   /**
-   * Unimplemented function to add a value to total. 
+   * Adds a value to total and logs the transaction.
    *
-   * @param value	Value to add to total. Unused.
+   * @param value	Value to add to total.
    * @since  1.0
    */
   public void add (int value) {
+	  total += value;
+	  transactions += " + " + value;
   }
 
   /**
-   * Unimplemented function to subtract a value from total. 
+   * Subtracts a value from total and logs the transaction.
    *
-   * @param value	Value to subtract from total. Unused.
+   * @param value	Value to subtract from total.
    * @since  1.0
    */
   public void subtract (int value) {
+	  total -= value;
+	  transactions += " - " + value;
   }
 
   /**
-   * Unimplemented function to print all transactions performed. Always returns "".
+   * Prints all transactions performed.
    *
-   * @return ""
+   * @return The list of transactions so far, with all operators and values spaced.
    * @since  1.0
    */
   public String toString () {
-    return "";
+    return transactions;
   }
 
   /**
